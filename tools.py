@@ -22,17 +22,26 @@ def send_request(str_url, str_data):
     obj_response = requests.put(str_url, json = {'edt': str_data}, headers = dict_headers)
     dict_response = obj_response.json()
     print(dict_response)
+    write_history(dict_response)
+
+def write_history(data):
+    now = (datetime.datetime.now()).strftime("%Y%m%d-%H-%M-%S")
+    str_log_path = os.path.join(os.getcwd(), 'history', f'{now}_log.log')
+    obj_file = open(str_log_path, 'a')
+    obj_file.writelines([str(data) + "\n"])
+    obj_file.close()
+
 
 def verify_init_value_isexist(task, scope):
     if obj_init_config.has_section(task) is True:
         pass
     else:
-        obj_init_config.add_section(task)
+        init_config_set_section(task)
     if obj_init_config.has_option(task , scope) is True:
         print("Already has init value")
     else:
         print(f"""Config add -> section: {task}; key: {scope}""")
-        obj_init_config.set(task, scope, "400")
+        init_config_set(task, scope, "400")
 
 def init_config_set_section(section):
     obj_init_config.add_section(section)
