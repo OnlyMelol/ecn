@@ -1,4 +1,0 @@
-{'method': 'PUT', 'path': '/api/device/eojs/027901/epcs/E0', 'params': {'edt': '0000'}, 'result': 0, 'code': 200, 'data': {'changed': {}}}
-{'method': 'PUT', 'path': '/api/device/eojs/027902/epcs/E0', 'params': {'edt': '0000'}, 'result': 0, 'code': 200, 'data': {'changed': {}}}
-{'method': 'PUT', 'path': '/api/device/eojs/027902/epcs/E1', 'params': {'edt': '00000400'}, 'result': 0, 'code': 200, 'data': {'changed': {}}}
-{'method': 'PUT', 'path': '/api/device/eojs/027901/epcs/E1', 'params': {'edt': '00000400'}, 'result': 0, 'code': 200, 'data': {'changed': {}}}
